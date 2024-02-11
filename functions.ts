@@ -1,16 +1,16 @@
-function getAverage(a: number, b: number, c?: number): string {
+const getAverage = (...a: number[]): string => {
    
-    let total = a+b;
-    let count = 2;
+    let total = 0;
+    let count = 0;
 
-    if (typeof c !== 'undefined') {
-    total +=c;
-    count++;
-    }
+   for (let i = 0; i < a.length; i++) {
+    total += a[i]
+    count++
+   }
 
     const result = total/count;
     return 'result : ' + result;
 }
 
-console.log(getAverage (10,20,30))
-console.log(getAverage (10, 20))
+console.log(getAverage (10, 20, 30, 40, 50))
+console.log(getAverage (5, 20, 35))
